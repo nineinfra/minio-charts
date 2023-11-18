@@ -1,0 +1,9 @@
+apiVersion: v2
+appVersion: 4.0.8
+description: The chart of minio directpv
+home: https://github.com/nineinfra/minio-charts
+maintainers:
+- name: nineinfra
+  url: https://github.com/nineinfra
+name: minio-directpv-chart
+version: v4.0.8

@@ -1,0 +1,9 @@
+apiVersion: v2
+appVersion: 5.0.9
+description: The chart of minio operator
+home: https://github.com/nineinfra/minio-charts
+maintainers:
+- name: nineinfra
+  url: https://github.com/nineinfra
+name: minio-operator-chart
+version: v5.0.9
