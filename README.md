@@ -11,7 +11,9 @@ kubectl krew install minio
 ```shell
 kubectl minio init --output > resources.yaml
 ```
-### 4.replace the resouces.yaml in the director operator/templates
+### 4.replace the resouces.yaml in the directory operator/templates
+
+### 5.replace namespace minio-operator to nineinfra in the resources.yaml and do not create namespace
 
 ## directpv
 ### 1.install directpv kubectl plugin
@@ -23,4 +25,6 @@ kubectl krew install directpv
 ```shell
 kubectl directpv install -o yaml > resources.yaml
 ```
-### 3.replace the resouces.yaml in the director directpv/templates
+### 3.replace the resouces.yaml in the directory directpv/templates
+
+### 4.replace namespace directpv to nineinfra in the resources.yaml and do not create namespace
