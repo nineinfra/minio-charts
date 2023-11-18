@@ -1,13 +1,4 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    operator.min.io/authors: MinIO, Inc.
-    operator.min.io/license: AGPLv3
-    operator.min.io/support: https://subnet.min.io
-  name: minio-operator
----
-apiVersion: v1
 kind: ServiceAccount
 metadata:
   annotations:
@@ -15,7 +6,7 @@ metadata:
     operator.min.io/license: AGPLv3
     operator.min.io/support: https://subnet.min.io
   name: minio-operator
-  namespace: minio-operator
+  namespace: nineinfra
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -214,7 +205,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: minio-operator
-  namespace: minio-operator
+  namespace: nineinfra
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -5306,7 +5297,7 @@ metadata:
     app.kubernetes.io/name: operator
     name: minio-operator
   name: operator
-  namespace: minio-operator
+  namespace: nineinfra
 spec:
   ports:
   - name: http
@@ -5326,7 +5317,7 @@ metadata:
   labels:
     name: minio-operator
   name: sts
-  namespace: minio-operator
+  namespace: nineinfra
 spec:
   ports:
   - name: https
@@ -5347,7 +5338,7 @@ metadata:
     app.kubernetes.io/instance: minio-operator
     app.kubernetes.io/name: operator
   name: minio-operator
-  namespace: minio-operator
+  namespace: nineinfra
 spec:
   replicas: 2
   selector:
@@ -5404,7 +5395,7 @@ metadata:
     operator.min.io/license: AGPLv3
     operator.min.io/support: https://subnet.min.io
   name: console-sa
-  namespace: minio-operator
+  namespace: nineinfra
 ---
 apiVersion: v1
 kind: Secret
@@ -5415,7 +5406,7 @@ metadata:
     operator.min.io/license: AGPLv3
     operator.min.io/support: https://subnet.min.io
   name: console-sa-secret
-  namespace: minio-operator
+  namespace: nineinfra
 type: kubernetes.io/service-account-token
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -5652,7 +5643,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: console-sa
-  namespace: minio-operator
+  namespace: nineinfra
 ---
 apiVersion: v1
 data:
@@ -5665,7 +5656,7 @@ metadata:
     operator.min.io/license: AGPLv3
     operator.min.io/support: https://subnet.min.io
   name: console-env
-  namespace: minio-operator
+  namespace: nineinfra
 ---
 apiVersion: v1
 kind: Service
@@ -5679,7 +5670,7 @@ metadata:
     app.kubernetes.io/name: operator
     name: console
   name: console
-  namespace: minio-operator
+  namespace: nineinfra
 spec:
   ports:
   - name: http
@@ -5700,7 +5691,7 @@ metadata:
     app.kubernetes.io/instance: minio-operator
     app.kubernetes.io/name: operator
   name: console
-  namespace: minio-operator
+  namespace: nineinfra
 spec:
   replicas: 1
   selector:
